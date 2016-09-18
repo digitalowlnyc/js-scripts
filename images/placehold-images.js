@@ -1,7 +1,7 @@
 if(typeof jQuery !== "undefined") {
     jQuery(document).ready(function() {
         jQuery("img").each(function() {
-            var src = $(this).attr("src");
+            var src = jQuery(this).attr("src");
             jQuery.ajax({
                 url: src,
                 type:'HEAD',
@@ -10,7 +10,7 @@ if(typeof jQuery !== "undefined") {
                     console.log("Loading placeholder for ", src);
                     var placeHolder =  "http://placehold.it/";
                     placeHolder += domImage.clientWidth + "x" + domImage.clientHeight;
-                    $(this).attr("src", placeHolder);
+                    jQuery(this).attr("src", placeHolder);
                 }.bind(this)
             })
         });
